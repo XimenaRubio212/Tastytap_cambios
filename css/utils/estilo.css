@@ -1,4 +1,3 @@
-
 /* === NAVBAR === */
 .navbar {
   background: var(--color-principal);
@@ -97,11 +96,19 @@
   margin-bottom: 1.5rem;
 }
 
+.card__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px; /*aqui es para acomodar la tarjeta a los lados*/
+  margin: 0 auto;
+}
+
 .recomendacion .card {
   background: var(--color-blanco);
   box-shadow: var(--sombra);
   border-radius: var(--radio);
-  max-width: 400px;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   padding-bottom: 1rem;
@@ -137,7 +144,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  max-width: 1000px;
+  min-width: 1200px;
   margin: 0 auto;
 }
 
@@ -190,7 +197,7 @@
 /* === TIENDA === */
 .tienda {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
 }
 
 .tienda h2 {
@@ -202,11 +209,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  max-width: 1000px;
+  min-width: 1200px; /*aqui es para acomodar la tarjeta a los lados*/
   margin: 0 auto;
 }
 
-.tienda__item {
+.tienda__card {
   background: var(--color-blanco);
   border-radius: var(--radio);
   box-shadow: var(--sombra);
@@ -215,27 +222,27 @@
   transition: var(--transicion);
 }
 
-.tienda__item:hover {
+.tienda__card:hover {
   transform: translateY(-5px);
 }
 
-.tienda__item img {
+.tienda__card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: var(--radio) var(--radio) 0 0;
 }
 
-.tienda__item h3 {
+.tienda__card h3 {
   margin-top: 0.8rem;
 }
 
-.tienda__item p {
+.tienda__card p {
   color: var(--color-secundario);
   padding: 0 1rem;
 }
 
-.tienda__item button {
+.tienda__card button {
   background: var(--color-principal);
   border: none;
   color: white;
@@ -245,7 +252,7 @@
   transition: var(--transicion);
 }
 
-.tienda__item button:hover {
+.tienda__card button:hover {
   background: #d06f39;
   transform: translateY(-2px);
   box-shadow: var(--sombra);
@@ -405,7 +412,7 @@
   color: var(--color-principal);
 }
 
-/* Pie inferior */
+/*footer*/
 .footer__bottom {
   grid-column: 1 / -1;
   text-align: center;
@@ -433,3 +440,71 @@
     justify-content: center;
   }
 }
+
+/* 
+=== FOOTER ===
+.footer {
+  background: var(--color-principal);
+  color: rgba(255,255,255,0.95);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 4rem;
+  text-align: left;
+  align-items: start;
+}
+.footer h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.footer a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  display: block;
+  margin: 0.4rem 0;
+  position: relative;
+  padding-bottom: 3px;
+}
+.footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1.5px;
+  background: #ffe4d6;
+  transition: width 0.3s ease;
+}
+.footer a:hover::after {
+  width: 100%;
+}
+.footer a:hover {
+  color: #ffe4d6;
+} */
+/*20/11/20025*/
+/*redes sociales se acomodan a la derecha cada una al lado*/
+/* .footer .social { */
+  /* display: flex; */
+  /* gap: 0.8rem; */
+/* } */
+/*este cambia el cirulo por color y por la forma y tamaño*/
+/* .footer .social i { */
+  /* font-size: 1.4rem; */
+  /* background: var(--color-blanco); */
+  /* color: var(--color-principal); */
+  /* padding: 1rem; */
+  /* border-radius: 100%; */
+  /* transition: var(--transicion); */
+/* } */
+/*hace que los iconos se muevan*/
+/* .footer .social i:hover { */
+  /* transform: scale(1.1); */
+/* } */
+/*footer para acomodar los botones de de las redes sociales*/
+/* .footer__bottom { */
+  /*espande el footer para que se vea mejor*/
+  /* grid-column: 1 / -1; */ 
+  /* text-align: center; */
+  /* margin-top: 3rem; */
+  /* font-size: 0.9rem; */ /*aumenta el tamaño de la letra y lo alarga*/
+/* } */
