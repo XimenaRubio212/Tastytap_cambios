@@ -4,56 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TastyTap | Menú</title>
-  <link rel="stylesheet" href="/TastyTap/css/style.css">
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+  <!-- NAVBAR: clase "active" en "Menú" -->
   <header class="navbar">
     <div class="navbar__logo">
-      <img src="/TastyTap/img/TastyTap.png" alt="Logo TastyTap">
+      <img src="/img/TastyTap.png" alt="Logo TastyTap">
       <h1>TastyTap</h1>
     </div>
     <nav class="navbar__menu">
-      <a href="/TastyTap/index.html">Inicio</a>
-      <a href="menu.html" class="active">Menú</a>
-      <a href="/TastyTap/view/tienda.html">Tienda</a>
-      <a href="/TastyTap/view/contacto.html">Contacto</a>
-      <a href="/TastyTap/view/login.html">Login</a>
+      <a href="/view/user/index.html">Inicio</a>
+      <a href="/view/user/menu.html" class="active">Menú</a>
+      <a href="/view/user/tienda.html">Tienda</a>
+      <a href="/view/user/contacto.html">Contacto</a>
+      <a href="/view/user/login.html">Login</a>
     </nav>
   </header>
 
+  <!-- Sección de menú -->
   <section class="menu">
     <h2>Explora nuestro menú</h2>
     <div class="menu__grid">
-      <div class="menu__item">
-        <img src="/TastyTap/img/pizza.jpg" alt="Pizza">
+      <div class="menu__card">
+        <img src="/img/pizza.jpg" alt="Pizza Margarita">
         <h3>Pizza Margarita</h3>
         <p>$28.000</p>
-        <button>Comprar</button>
+        <button class="btn">Comprar</button>
       </div>
-      <div class="menu__item">
-        <img src="/TastyTap/img/Sushi.png" alt="Sushi">
+      <div class="menu__card">
+        <img src="/img/Sushi.png" alt="Sushi Rolls">
         <h3>Sushi Rolls</h3>
         <p>$32.000</p>
-        <button>Comprar</button>
+        <button class="btn">Comprar</button>
       </div>
-      <div class="menu__item">
-        <img src="/TastyTap/img/pasta.jpg" alt="Pasta">
+      <div class="menu__card">
+        <img src="/img/pasta.jpg" alt="Pasta Carbonara">
         <h3>Pasta Carbonara</h3>
         <p>$26.000</p>
-        <button>Comprar</button>
+        <button class="btn">Comprar</button>
       </div>
-      <div class="menu__item">
-        <img src="/TastyTap/img/burger.jpg" alt="Pasta">
+      <div class="menu__card">
+        <img src="/img/burger.jpg" alt="Burger Deluxe">
         <h3>Burger Deluxe</h3>
         <p>$25.000</p>
-        <button>Comprar</button>
+        <button class="btn">Comprar</button>
       </div>
     </div>
   </section>
 
-  <!-- Reutilizamos el footer -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="Restaurantes">
       <h3>Restaurantes Mejor Valorados</h3>
@@ -64,31 +66,27 @@
       <a href="#">El corral</a>
       <a href="#">Dunkin' Donuts</a>
     </div>
-
     <div class="Unete">
       <h3>Únete a Tasty Tap</h3>
       <a href="#">Registra tu restaurante</a>
       <a href="#">Registra tu local</a>
       <a href="#">Haz crecer tu marca</a>
       <a href="#">Promociona tu negocio</a>
-    <div>
-
+    </div>
     <div class="redes">
-      <h3>Síguenos en nuestras Redes Sociales</h3>
+      <h3>Síguenos en Redes Sociales</h3>
       <div class="social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
-
     <div class="contacto">
       <h3>Contacto</h3>
       <p>📍 Calle 123 #45-67, Bogotá, Colombia</p>
       <p>📞 +57 320 555 1234</p>
       <p>✉️ contacto@tastytap.com</p>
     </div>
-
     <div class="footer__bottom">
       <p>© 2025 TastyTap — Todos los derechos reservados 🍴</p>
     </div>

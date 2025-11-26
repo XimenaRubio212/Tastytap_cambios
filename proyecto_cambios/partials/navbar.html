@@ -1,0 +1,24 @@
+<!-- 
+  === NAVBAR.PARTIAL ===
+  Propósito: Fragmento reutilizable para la barra de navegación.
+  En desarrollo local sin servidor, copiar su contenido en cada HTML.
+  En producción, se incluye dinámicamente (PHP, JS, etc.).
+-->
+
+<header class="navbar">
+  <div class="navbar__logo">
+    <img src="../img/TastyTap.png" alt="Logo TastyTap">
+    <h1>TastyTap</h1>
+  </div>
+  <nav class="navbar__menu">
+    <!-- 
+      ⚠️ IMPORTANTE: Cambiar la clase "active" según la página actual.
+      Ej: en menu.html → <a href="menu.html" class="active">Menú</a>
+    -->
+    <a href="index.html">Inicio</a>
+    <a href="menu.html">Menú</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>

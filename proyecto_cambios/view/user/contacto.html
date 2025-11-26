@@ -3,38 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TastyTap | Login</title>
-  <link rel="stylesheet" href="/TastyTap/css/style.css">
+  <title>TastyTap | Contacto</title>
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+  <!-- NAVBAR: clase "active" en "Contacto" -->
   <header class="navbar">
     <div class="navbar__logo">
-      <img src="/TastyTap/img/TastyTap.png" alt="Logo TastyTap">
+      <img src="/img/TastyTap.png" alt="Logo TastyTap">
       <h1>TastyTap</h1>
     </div>
     <nav class="navbar__menu">
-      <a href="/TastyTap/index.html">Inicio</a>
-      <a href="/TastyTap/view/menu.html">Menú</a>
-      <a href="/TastyTap/view/tienda.html">Tienda</a>
-      <a href="/TastyTap/view/contacto.html">Contacto</a>
-      <a href="login.html" class="active">Login</a>
+      <a href="/view/user/index.html">Inicio</a>
+      <a href="/view/user/menu.html">Menú</a>
+      <a href="/view/user/tienda.html">Tienda</a>
+      <a href="/view/user/contacto.html" class="active">Contacto</a>
+      <a href="/view/user/login.html">Login</a>
     </nav>
   </header>
 
-  <section class="login">
-    <h2>Inicia sesión o regístrate</h2>
-    <form class="login-form">
-      <input type="email" placeholder="Correo electrónico" required>
-      <input type="password" placeholder="Contraseña" required>
-      <button type="submit">Entrar</button>
-      <p>¿No tienes cuenta? <a href="#">Regístrate aquí</a></p>
+  <!-- Formulario de contacto -->
+  <section class="contact-form">
+    <h2>Contáctanos</h2>
+    <form>
+      <input type="text" class="input" placeholder="Tu nombre" required>
+      <input type="email" class="input" placeholder="Tu correo" required>
+      <textarea class="textarea" rows="4" placeholder="Tu mensaje ..."></textarea>
+      <button type="submit" class="btn">Enviar mensaje</button>
     </form>
   </section>
 
-    <!-- Reutilizamos el footer -->
-<footer class="footer">
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="Restaurantes">
       <h3>Restaurantes Mejor Valorados</h3>
       <a href="#">Camachos</a>
@@ -44,31 +46,27 @@
       <a href="#">El corral</a>
       <a href="#">Dunkin' Donuts</a>
     </div>
-
     <div class="Unete">
       <h3>Únete a Tasty Tap</h3>
       <a href="#">Registra tu restaurante</a>
       <a href="#">Registra tu local</a>
       <a href="#">Haz crecer tu marca</a>
       <a href="#">Promociona tu negocio</a>
-    <div>
-
+    </div>
     <div class="redes">
-      <h3>Síguenos en nuestras Redes Sociales</h3>
+      <h3>Síguenos en Redes Sociales</h3>
       <div class="social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
-
     <div class="contacto">
       <h3>Contacto</h3>
       <p>📍 Calle 123 #45-67, Bogotá, Colombia</p>
       <p>📞 +57 320 555 1234</p>
       <p>✉️ contacto@tastytap.com</p>
     </div>
-
     <div class="footer__bottom">
       <p>© 2025 TastyTap — Todos los derechos reservados 🍴</p>
     </div>

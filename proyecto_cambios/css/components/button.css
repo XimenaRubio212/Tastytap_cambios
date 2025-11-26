@@ -1,0 +1,41 @@
+/* 
+  === BUTTON.CSS ===
+  Propósito: Estilizar botones reutilizables (comprar, enviar, login).
+  Usar clase .btn en <button> o <a role="button">.
+*/
+
+/* 
+  .btn → Estilo base para todos los botones.
+*/
+.btn {
+  display: inline-block;       /* Permite padding y width/height */
+  background: #F08B51;        /* Color principal */
+  color: white;               /* Texto blanco */
+  border: none;               /* Sin borde */
+  padding: 0.6rem 1.2rem;     /* Espaciado interno */
+  border-radius: 6px;         /* Bordes redondeados */
+  font-weight: 500;           /* Texto seminegrita */
+  font-size: 1rem;            /* Tamaño consistente */
+  cursor: pointer;            /* Mano al hacer hover */
+  transition: all 0.3s ease;  /* Animación suave */
+}
+
+/* 
+  .btn:hover → Efecto al pasar el mouse.
+  - Fondo más oscuro.
+  - Ligero salto hacia arriba.
+  - Sombra para sensación de "elevado".
+*/
+.btn:hover {
+  background: #d06f39;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 
+  .btn--small → Variante compacta (ej: formularios).
+*/
+.btn--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+}

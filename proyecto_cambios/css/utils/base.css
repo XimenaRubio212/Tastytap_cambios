@@ -1,0 +1,60 @@
+/* 
+  === BASE.CSS ===
+  Propósito: Definir variables globales y resetear estilos por defecto del navegador.
+  ¿Por qué? Para consistencia cross-browser y mantenibilidad.
+  ✅ Variables CSS permiten cambiar colores/fuentes en un solo lugar.
+*/
+
+/* 
+  :root → Declara variables CSS (custom properties).
+  Se acceden con var(--nombre) en otros archivos.
+*/
+:root {
+  /* Color principal de la marca (naranja cálido) */
+  --color-principal: #F08B51;
+
+  /* Color secundario para texto oscuro */
+  --color-secundario: #333;
+
+  /* Fondo claro de la página */
+  --color-fondo: #f9f9f9;
+
+  /* Blanco puro */
+  --color-blanco: #fff;
+
+  /* Gris neutro para bordes */
+  --color-gris: #ccc;
+
+  /* Radio de bordes redondeados (usado en tarjetas, botones, etc.) */
+  --radio: 10px;
+
+  /* Sombra suave para efectos de profundidad */
+  --sombra: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  /* Transición estándar para animaciones */
+  --transicion: all 0.3s ease;
+}
+
+/* 
+  * → Selector universal.
+  - Resetea márgenes y paddings por defecto.
+  - box-sizing: border-box → padding y border se incluyen en width/height declarado.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  body → Estilo base para toda la página.
+  - Fuente moderna y legible.
+  - Fondo y color de texto predeterminados.
+  - Espaciado vertical cómodo (line-height).
+*/
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-secundario);
+  line-height: 1.6;
+}

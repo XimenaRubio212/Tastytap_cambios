@@ -1,0 +1,66 @@
+/* 
+  === CARD.CSS ===
+  Propósito: Estilizar tarjetas reutilizables (platos, restaurantes).
+  Clases: .card (base), .card--recomendacion, .card--menu, .card--tienda.
+*/
+
+/* 
+  .card → Estilo común a todas las tarjetas.
+*/
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;            /* Evita que imágenes sobresalgan */
+  transition: all 0.3s ease;   /* Animación en hover */
+}
+
+/* 
+  .card:hover → Efecto de elevación.
+*/
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* 
+  Imágenes dentro de tarjetas: ocupan todo el ancho.
+*/
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 
+  Modificadores: Variantes según contexto.
+  - recomendacion: altura alta (250px)
+  - menu/tienda: altura compacta (180px)
+  object-fit: cover → recorta manteniendo proporción.
+*/
+.card--recomendacion img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card--menu img,
+.card--tienda img {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* 
+  Espaciado interno según tipo.
+*/
+.card--recomendacion {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
+.card--menu,
+.card--tienda {
+  padding: 1rem;
+}

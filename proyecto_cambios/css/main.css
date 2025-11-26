@@ -1,0 +1,15 @@
+/* 
+  === MAIN.CSS ===
+  Propósito: Archivo único de entrada para todos los estilos.
+  ¿Por qué? Evita múltiples <link> en HTML y mejora organización.
+  Orden de importación:
+  1. Base (variables + reset)
+  2. Componentes (reutilizables)
+  3. Estilos (secciones específicas)
+*/
+
+@import url('utils/Base.css');
+@import url('components/button.css');
+@import url('components/card.css');
+@import url('components/input.css');
+@import url('utils/estilo.css');
