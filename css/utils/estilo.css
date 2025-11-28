@@ -1,510 +1,333 @@
+/* 
+   📁 RUTA: /css/utils/estilo.css
+   ✅ RESPONSABILIDAD: Estilos de layout y apariencia por sección (navbar, hero, footer, etc.)
+   🎯 USO: Importado después de componentes. Usa clases BEM-like: .bloque__elemento
+*/
+
 /* === NAVBAR === */
 .navbar {
-  background: var(--color-principal);
-  color: var(--color-blanco);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  flex-wrap: wrap;
+    background: var(--color-principal); /* Fondo naranja */
+    color: var(--color-blanco);         /* Texto blanco */
+    display: flex;                      /* Layout horizontal */
+    justify-content: space-between;     /* Logo a izq, menú a der */
+    align-items: center;                /* Centrado vertical */
+    padding: 1rem 2rem;                 /* Espaciado interno */
+    flex-wrap: wrap;                    /* Envuelve en pantallas pequeñas */
 }
 
 .navbar__logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;                       /* Espacio entre logo e ícono */
 }
 
 .navbar__logo img {
-  width: 50px;
-  height: auto;
+    width: 50px;
+    height: auto;                       /* Mantiene proporción */
 }
 
-/* === NAVBAR LINK ANIMADO === */
 .navbar__menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;                       /* Espacio entre enlaces */
 }
 
 .navbar__menu a {
-  position: relative;
-  color: var(--color-blanco);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transicion);
-  padding-bottom: 4px;
+    position: relative;
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transicion);
+    padding-bottom: 4px;
 }
 
-/* Línea animada debajo del texto */
+/* 
+   Línea inferior animada para indicar estado activo/hover.
+   ✅ POSICIONAMIENTO ACTIVADO para que funcione correctamente.
+*/
 .navbar__menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: #ffe4d6;
-  transition: width 0.3s ease;
+    content: "";
+    position: absolute;                 /* Posición relativa al enlace */
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #ffe4d6;                /* Naranja muy claro */
+    transition: width 0.3s ease;
 }
 
-/* Hover animado */
-.navbar__menu a:hover::after {
-  width: 100%;
-}
-
-/* Enlace activo */
+.navbar__menu a:hover::after,
 .navbar__menu a.active::after {
-  width: 100%;
-  background: var(--color-blanco);
+    width: 100%;
 }
 
-/* Hover con desplazamiento sutil */
-.navbar__menu a:hover {
-  color: #fff;
-  transform: translateY(-2px);
+.navbar__menu a.active::after {
+    background: var(--color-blanco);    /* Línea blanca cuando está activo */
 }
 
 /* === HERO === */
 .hero {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(180deg, #fff, #fef3eb);
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(180deg, #fff, #fef3eb); /* Degradado suave */
 }
 
 .hero h2 {
-  color: var(--color-principal);
-  font-size: 2rem;
-  margin-bottom: 1rem;
+    color: var(--color-principal);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-/* === SECCIÓN RECOMENDACIÓN - inicio - index === */
+/* === SECCIÓN RECOMENDACIÓN === */
 .recomendacion {
-  text-align: center;
-  padding: 2rem 1rem;
+    text-align: center;
+    padding: 2rem 1rem;                 /* Evita contacto con footer */
 }
 
 .recomendacion h3 {
-  color: var(--color-principal);
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+    color: var(--color-principal);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
 }
 
-.card__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px; /*aqui es para acomodar la tarjeta a los lados*/
-  margin: 0 auto;
+.recomendacion__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive */
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;                     /* Centrado */
 }
 
-.recomendacion .card {
-  background: var(--color-blanco);
-  box-shadow: var(--sombra);
-  border-radius: var(--radio);
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-  padding-bottom: 1rem;
-}
-
-.recomendacion img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: var(--radio) var(--radio) 0 0;
-}
-
-.recomendacion h4 {
-  margin: 0.8rem 0 0.3rem;
-}
-
-.recomendacion p {
-  padding: 0 1rem;
-}
-
-/* === MENÚ === */
+/* === SECCIÓN MENÚ === */
 .menu {
-  text-align: center;
-  padding: 2rem 1rem;
+    text-align: center;
+    padding: 2rem 1rem;
 }
 
 .menu h2 {
-  color: var(--color-principal);
-  margin-bottom: 2rem;
+    color: var(--color-principal);
+    margin-bottom: 2rem;
 }
 
 .menu__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  min-width: 1200px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.menu__item {
-  background: var(--color-blanco);
-  border-radius: var(--radio);
-  box-shadow: var(--sombra);
-  padding: 1rem;
-  transition: var(--transicion);
+.menu__card {
+    background: var(--color-blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 1rem;                      /* Más compacto que recomendaciones */
+    transition: var(--transicion);
+    overflow: hidden;
 }
 
-.menu__item:hover {
-  transform: translateY(-5px);
+.menu__card h3 {
+    font-size: 1.25rem;
+    color: var(--color-principal);
+    margin: 0.5rem 0 0.25rem;
 }
 
-.menu__item img {
-  width: 100%;
-  border-radius: var(--radio) var(--radio) 0 0;
-  height: 180px;
-  object-fit: cover;
+.menu__card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0 0 0.5rem;
 }
 
-.menu__item h3 {
-  margin-top: 0.8rem;
-  color: var(--color-secundario);
-}
-
-.menu__item p {
-  color: var(--color-principal);
-  font-weight: 600;
-}
-
-.menu__item button {
-  margin-top: 0.6rem;
-  background: var(--color-principal);
-  border: none;
-  color: var(--color-blanco);
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: var(--transicion);
-}
-
-.menu__item button:hover {
-  background: #d06f39;
-  transform: translateY(-2px);
-  box-shadow: var(--sombra);
-}
-
-/* === TIENDA === */
+/* === SECCIÓN TIENDA === */
 .tienda {
-  text-align: center;
-  padding: 2rem 2rem;
-}
-
-.tienda h2 {
-  color: var(--color-principal);
-  margin-bottom: 2rem;
+    text-align: center;
+    padding: 2rem 1rem;
 }
 
 .tienda__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  min-width: 1200px; /*aqui es para acomodar la tarjeta a los lados*/
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.tienda__card {
-  background: var(--color-blanco);
-  border-radius: var(--radio);
-  box-shadow: var(--sombra);
-  overflow: hidden;
-  padding-bottom: 1rem;
-  transition: var(--transicion);
+.card__tienda {
+    background: var(--color-blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 1rem;
+    transition: var(--transicion);
+    overflow: hidden;
 }
 
-.tienda__card:hover {
-  transform: translateY(-5px);
+/* === SECCIÓN CONTACTO === */
+/* ⚠️ CORREGIDO: clase en HTML debe ser "contact__form" para coincidir con CSS */
+.contact__form {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.tienda__card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: var(--radio) var(--radio) 0 0;
-}
-
-.tienda__card h3 {
-  margin-top: 0.8rem;
-}
-
-.tienda__card p {
-  color: var(--color-secundario);
-  padding: 0 1rem;
-}
-
-.tienda__card button {
-  background: var(--color-principal);
-  border: none;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: var(--transicion);
-}
-
-.tienda__card button:hover {
-  background: #d06f39;
-  transform: translateY(-2px);
-  box-shadow: var(--sombra);
-}
-
-/* === CONTACTO === */
-.contact-form {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: var(--color-blanco);
-  padding: 2rem;
-  border-radius: var(--radio);
-  box-shadow: var(--sombra);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid var(--color-gris);
-  border-radius: 6px;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.contact-form button {
-  background: var(--color-principal);
-  color: var(--color-blanco);
-  border: none;
-  padding: 0.8rem 0.7rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: var(--transicion);
-}
-
-.contact-form button:hover {
-  background: #d06f39;
-  transform: translateY(-2px);
-  box-shadow: var(--sombra);
-}
-
-/* === LOGIN === */
+/* === SECCIÓN LOGIN === */
 .login {
-  text-align: center;
-  padding: 2rem 1rem;
+    text-align: center;
+    padding: 2rem 1rem;
 }
 
-.login h2 {
-  color: var(--color-principal);
-  margin-bottom: 1.5rem;
+.login__form {
+    background: var(--color-blanco);
+    box-shadow: var(--sombra);
+    border-radius: var(--radio);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.login-form {
-  background: var(--color-blanco);
-  box-shadow: var(--sombra);
-  border-radius: var(--radio);
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* === REGISTRO ===*/
+/* === SECCIÓN REGISTRO === */
+/* 
+   ✅ Agregar al final de /css/utils/estilo.css
+   → Mismo estilo que .login y .contact__form: centrado, fondo blanco, sombra
+*/
+.registro {
+    text-align: center;
+    padding: 2rem 1rem;
 }
 
-.login-form input {
-  padding: 0.8rem;
-  border-radius: 6px;
-  border: 1px solid var(--color-gris);
+.registro__form {
+    background: var(--color-blanco);
+    box-shadow: var(--sombra);
+    border-radius: var(--radio);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.login-form button {
-  background: var(--color-principal);
-  color: var(--color-blanco);
-  border: none;
-  padding: 0.8rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: var(--transicion);
+/* Estilo para enlace "Inicia sesión aquí" */
+.link-login {
+    color: var(--color-principal);
+    text-decoration: underline;
 }
 
-.login-form button:hover {
-  background: #d06f39;
-  transform: translateY(-2px);
-  box-shadow: var(--sombra);
+.link-login:hover {
+    color: #d06f39;
 }
 
-/* === FOOTER ESTILO === */
+/* === FOOTER === */
 .footer {
-  background: var(--color-principal);
-  color: rgba(255, 255, 255, 0.95);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 4rem;
-  text-align: left;
-  align-items: start;
+    background: var(--color-principal);
+    color: rgba(255, 255, 255, 0.95);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 4rem 2rem;
+    text-align: left;
+    align-items: start;
 }
 
 .footer h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
 }
 
 .footer a {
-  color: var(--color-blanco);
-  text-decoration: none;
-  display: block;
-  margin: 0.4rem 0;
-  transition: var(--transicion);
-  position: relative;
-  padding-bottom: 3px;
+    color: var(--color-blanco);
+    text-decoration: none;
+    display: block;
+    margin: 0.4rem 0;
+    position: relative;
+    padding-bottom: 3px;
 }
 
-.footer 
-
-/* Subrayado animado también en footer */
 .footer a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 1.5px;
-  background: #ffe4d6;
-  transition: width 0.3s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1.5px;
+    background: #ffe4d6;
+    transition: width 0.3s ease;
 }
 
 .footer a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 .footer a:hover {
-  color: #ffe4d6;
+    color: #ffe4d6;
 }
 
-/* Redes sociales */
 .footer .social {
-  display: flex;
-  gap: 0.8rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .footer .social i {
-  font-size: 1.4rem;
-  background: var(--color-blanco);
-  color: var(--color-principal);
-  padding: 0.4rem;
-  border-radius: 50%;
-  transition: var(--transicion);
+    font-size: 1.4rem;
+    background: var(--color-blanco);
+    color: var(--color-principal);
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: transform 0.3s;
 }
 
 .footer .social i:hover {
-  transform: scale(1.1);
-  background: var(--color-blanco);
-  color: var(--color-principal);
+    transform: scale(1.15);
 }
 
-/*footer*/
 .footer__bottom {
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-
-  .navbar__menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .footer {
+    grid-column: 1 / -1;            /* Ocupa todas las columnas */
     text-align: center;
-    padding: 2rem 1rem;
-  }
-
-  .footer .social {
-    justify-content: center;
-  }
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
 }
 
-/* 
-=== FOOTER ===
-.footer {
-  background: var(--color-principal);
-  color: rgba(255,255,255,0.95);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 4rem;
-  text-align: left;
-  align-items: start;
+/* === RESPONSIVE (móviles) === */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navbar__menu {
+        justify-content: center;
+    }
+
+    /* Una sola columna en grids */
+    .menu__grid,
+    .tienda__grid,
+    .recomendacion__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .footer .social {
+        justify-content: center;
+    }
 }
-.footer h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-.footer a {
-  color: var(--color-blanco);
-  text-decoration: none;
-  display: block;
-  margin: 0.4rem 0;
-  position: relative;
-  padding-bottom: 3px;
-}
-.footer a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 1.5px;
-  background: #ffe4d6;
-  transition: width 0.3s ease;
-}
-.footer a:hover::after {
-  width: 100%;
-}
-.footer a:hover {
-  color: #ffe4d6;
-} */
-/*20/11/20025*/
-/*redes sociales se acomodan a la derecha cada una al lado*/
-/* .footer .social { */
-  /* display: flex; */
-  /* gap: 0.8rem; */
-/* } */
-/*este cambia el cirulo por color y por la forma y tamaño*/
-/* .footer .social i { */
-  /* font-size: 1.4rem; */
-  /* background: var(--color-blanco); */
-  /* color: var(--color-principal); */
-  /* padding: 1rem; */
-  /* border-radius: 100%; */
-  /* transition: var(--transicion); */
-/* } */
-/*hace que los iconos se muevan*/
-/* .footer .social i:hover { */
-  /* transform: scale(1.1); */
-/* } */
-/*footer para acomodar los botones de de las redes sociales*/
-/* .footer__bottom { */
-  /*espande el footer para que se vea mejor*/
-  /* grid-column: 1 / -1; */ 
-  /* text-align: center; */
-  /* margin-top: 3rem; */
-  /* font-size: 0.9rem; */ /*aumenta el tamaño de la letra y lo alarga*/
-/* } */

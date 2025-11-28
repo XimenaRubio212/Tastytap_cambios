@@ -1,22 +1,39 @@
+/* 
+   📁 RUTA: /css/components/input.css
+   ✅ RESPONSABILIDAD: Estilos reutilizables para campos de formulario
+   🎯 USO: Clases `.input` (input/textarea), `.form-label`
+*/
+
+/* Estilo base para inputs y textareas */
 .input,
 .textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-family: 'Poppins', Arial, sans-serif;
-  transition: border-color 0.2s ease;
+    width: 100%;                     /* Ocupan todo el ancho del contenedor */
+    padding: 0.8rem;                 /* Espaciado interno cómodo */
+    border: 1px solid #ddd;          /* Borde gris claro */
+    border-radius: 6px;              /* Bordes suavemente redondeados */
+    font-size: 1rem;                 /* Tamaño de fuente legible */
+    font-family: inherit;            /* Hereda tipografía del body */
+    transition: border-color 0.3s;   /* Transición suave para el borde en :focus */
 }
 
+/* Mejor accesibilidad y feedback visual al enfocar */
 .input:focus,
 .textarea:focus {
-  outline: none;
-  border-color: #F08B51;
-  box-shadow: 0 0 0 2px rgba(240, 139, 81, 0.2);
+    outline: none;                   /* Elimina outline nativo del navegador */
+    border-color: var(--color-principal); /* Borde naranja al enfocar */
+    box-shadow: 0 0 0 3px rgba(240, 139, 81, 0.2); /* Glow suave */
 }
 
+/* Para textareas: permite redimensionar verticalmente (no horizontal) */
 .textarea {
-  resize: vertical;
-  min-height: 120px;
+    resize: vertical;                /* Solo vertical */
+    min-height: 120px;               /* Altura mínima razonable */
+}
+
+/* Etiquetas asociadas a campos de formulario */
+.form-label {
+    display: block;                  /* Comportamiento tipo bloque */
+    margin-bottom: 0.5rem;           /* Espacio hacia el campo */
+    font-weight: 500;                /* Semi-negrita */
+    color: #2c3e50;                  /* Color oscuro para mejor contraste */
 }

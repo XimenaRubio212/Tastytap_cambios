@@ -1,42 +1,59 @@
+/* 
+   📁 RUTA: /css/components/card.css
+   ✅ RESPONSABILIDAD: Estilos reutilizables para tarjetas (componente .card)
+   🎯 USO: Clase base `.card`, y variantes específicas: `.card__recomendacion`, `.card__tienda`, `.menu__card`
+*/
+
+/* Estilo base común a todas las tarjetas */
 .card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: all 0.3s ease;
+    background: var(--color-blanco); /* Fondo blanco */
+    border-radius: var(--radio);     /* Bordes redondeados (10px) */
+    box-shadow: var(--sombra);       /* Sombra suave */
+    overflow: hidden;                /* Contiene contenido interno (ej: img) */
+    transition: var(--transicion);   /* Transición suave para hover */
 }
 
+/* Efecto al hacer hover: eleva y aumenta sombra */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transform: translateY(-5px);        /* Elevación sutil */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más profunda */
 }
 
+/* Estilo de imagen dentro de cualquier tarjeta: ocupa ancho total */
 .card img {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.card--recomendacion img {
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
+/* === VARIANTES POR SECCIÓN === */
+
+/* Recomendaciones del día: imagen más alta */
+.card__recomendacion img {
+    height: 250px;                   /* Altura fija para alineación visual */
+    object-fit: cover;               /* Recorta imagen manteniendo proporción */
+    border-radius: var(--radio) var(--radio) 0 0; /* Solo esquinas superiores redondeadas */
 }
 
-.card--menu img,
-.card--tienda img {
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
+/* Tienda (restaurantes): imagen ligeramente más corta */
+.card__tienda img {
+    height: 190px;
+    object-fit: cover;
+    border-radius: var(--radio) var(--radio) 0 0;
 }
 
-.card--recomendacion {
-  max-width: 400px;
-  margin: 0 auto;
-  padding-bottom: 1rem;
+/* Menú (platos): imagen con altura fija y bordes redondeados */
+.menu__card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radio) var(--radio) 0 0; /* Solo parte superior redondeada */
 }
 
-.card--menu,
-.card--tienda {
-  padding: 1rem;
+/* Estilo de contenedor de recomendación individual (centrado, ancho limitado) */
+.card__recomendacion {
+    max-width: 400px;
+    margin: 0 auto;                  /* Centrar horizontalmente */
+    padding-bottom: 1rem;            /* Espacio inferior para texto */
 }

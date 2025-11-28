@@ -1,25 +1,37 @@
-/* === VARIABLES GLOBALES === */
+/* 
+   📁 RUTA: /css/utils/base.css
+   ✅ RESPONSABILIDAD:
+      - Define variables globales de diseño (colores, radios, sombras, transiciones)
+      - Aplica reset básico y estilos base del body
+   🎯 USO: Importado PRIMERO en style.css para que otras hojas lo utilicen
+*/
+
 :root {
-  --color-principal: #F08B51;
-  --color-secundario: #333;
-  --color-fondo: #f9f9f9;
-  --color-blanco: #fff;
-  --color-gris: #ccc;
-  --radio: 10px;
-  --sombra: 0 4px 10px rgba(0, 0, 0, 0.1);
-  --transicion: all 0.3s ease;
+  /* Paleta de colores principal */
+  --color-principal: #F08B51;        /* Naranja cálido: botones, títulos, navbar */
+  --color-secundario: #333;          /* Texto principal oscuro */
+  --color-fondo: #f9f9f9;            /* Fondo claro general */
+  --color-blanco: #fff;              /* Fondo de tarjetas, formularios */
+  --color-gris: #ccc;                /* Bordes, placeholders */
+  --color-admin-sidebar: #3c6288;    /* (Reservado para sección admin) */
+
+  /* Escalares de diseño */
+  --radio: 10px;                     /* Radio de bordes redondeados (tarjetas, botones) */
+  --sombra: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave estándar */
+  --transicion: all 0.3s ease;       /* Transición uniforme para hover/interacción */
 }
 
-/* === RESETEO GENERAL === */
+/* Reset universal: elimina márgenes/paddings por defecto y establece box-sizing */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;           /* Incluye padding/border en ancho total */
 }
 
+/* Estilo base del cuerpo */
 body {
-  font-family: 'Poppins', Arial, sans-serif;
-  background: var(--color-fondo);
-  color: var(--color-secundario);
-  line-height: 1.6;
+  font-family: 'Poppins', Arial, sans-serif;  /* Tipografía moderna y legible */
+  background: var(--color-fondo);   /* Fondo claro global */
+  color: var(--color-secundario);   /* Texto oscuro por defecto */
+  line-height: 1.6;                 /* Espaciado vertical cómodo para lectura */
 }

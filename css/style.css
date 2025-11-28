@@ -1,0 +1,22 @@
+/* 
+   📁 RUTA: /css/style.css
+   ✅ RESPONSABILIDAD: Archivo principal de CSS. IMPORTA todos los demás en orden correcto.
+   🎯 ORDEN DE IMPORTACIÓN:
+        1. base.css      → variables y reset
+        2. componentes   → botones, tarjetas, inputs
+        3. estilo.css    → layout y apariencia por sección
+        4. (opcional) admin → comentado por defecto
+*/
+
+@import url('utils/base.css');        /* 1. Variables y reset */
+@import url('components/button.css'); /* 2. Componente: botones */
+@import url('components/card.css');   /* 2. Componente: tarjetas */
+@import url('components/input.css');  /* 2. Componente: inputs */
+@import url('utils/estilo.css');      /* 3. Estilos visuales por sección */
+
+/* 
+   🔐 ADMIN: Estos imports están comentados porque no se usan en las vistas de usuario.
+   Descomentar solo si /views/admin/ existe y se necesita.
+*/
+/* @import url('admin/panelControl.css'); */
+/* @import url('admin/gestion.css'); */

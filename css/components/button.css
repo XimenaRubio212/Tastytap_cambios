@@ -1,23 +1,54 @@
+/* 
+   📁 RUTA: /css/components/button.css
+   ✅ RESPONSABILIDAD: Estilos reutilizables para botones (y enlaces que parezcan botones)
+   🎯 USO: Importado en style.css. Clase base: `.btn`
+*/
+
+/* Estilo base para todos los botones (botones <button> y enlaces <a> con .btn) */
 .btn {
-  display: inline-block;
-  background: #F08B51;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    display: inline-block;           /* Comportamiento tipo bloque en línea */
+    background: var(--color-principal); /* Fondo con color principal */
+    color: white;                    /* Texto blanco */
+    padding: 0.75rem 1.5rem;         /* Espaciado interno cómodo */
+    border: none;                    /* Sin borde visible */
+    border-radius: 6px;              /* Bordes suavemente redondeados */
+    font-weight: 500;                /* Texto semi-negrita */
+    font-size: 1rem;                 /* Tamaño base legible */
+    cursor: pointer;                 /* Cursor de mano al hacer hover */
+    transition: var(--transicion);   /* Transición suave (definida en base.css) */
+    text-decoration: none;           /* Para enlaces: elimina subrayado */
 }
 
+/* Efecto al pasar el mouse: oscurecer fondo + elevar + sombra */
 .btn:hover {
-  background: #d06f39;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #d06f39;             /* Versión más oscura del color principal */
+    transform: translateY(-2px);     /* Eleva ligeramente */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
 }
 
+/* Variante pequeña: para acciones secundarias o espacios reducidos */
 .btn--small {
-  padding: 0.5rem 1rem;
-  font-size: 0.95rem;
+    padding: 0.5rem 1rem;            /* Menos padding */
+    font-size: 0.9rem;               /* Texto ligeramente más pequeño */
+}
+
+/* 
+   ⚠️ NOTA: Las clases .btn-edit y .btn-delete están definidas en admin/style.css 
+   (no se usan en páginas de usuario). Se dejan aquí por compatibilidad futura.
+*/
+.btn-edit,
+.btn-delete {
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-edit:hover {
+    background-color: #2980b9;
+}
+.btn-delete:hover {
+    background-color: #c0392b;
 }
