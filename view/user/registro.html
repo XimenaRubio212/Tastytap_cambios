@@ -3,149 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TastyTap | Registro</title>
-  <!-- 
-       ✅ Ruta relativa correcta desde /views/user/ hacia el CSS principal.
-       → style.css ya importa: base.css, button.css, card.css, input.css, estilo.css
-  -->
-  <link rel="stylesheet" href="/css/style.css">
-  <!-- Iconos de redes (solo por coherencia; no usados aquí, pero presentes en footer) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Registro - TastyTap</title>
+  <link rel="stylesheet" href="../../css/utils/Base.css">
+  <link rel="stylesheet" href="../../css/utils/estilo.css">
+  <link rel="stylesheet" href="../../css/utils/style.css">
+  <link rel="stylesheet" href="../../css/components/navbar.css">
+  <link rel="stylesheet" href="../../css/components/footer.css">
+  <link rel="stylesheet" href="../../css/components/button.css">
+  <link rel="stylesheet" href="../../css/components/input.css">
 </head>
 <body>
-
-  <!-- 
-       ✅ Navbar idéntico al de login.html, menu.html, etc.
-       → Rutas absolutas desde raíz para evitar errores de profundidad
-  -->
-  <header class="navbar">
-    <div class="navbar__logo">
-      <img src="/img/TastyTap.png" alt="Logo TastyTap">
-      <h1>TastyTap</h1>
-    </div>
-    <nav class="navbar__menu">
-      <a href="/index.html">Inicio</a>
-      <a href="/view/user/menu.html">Menú</a>
-      <a href="/view/user/tienda.html">Tienda</a>
-      <a href="/view/user/contacto.html">Contacto</a>
-      <a href="/view/user/login.html">Login</a>
-      <a href="/view/user/registro.html" class="active">Registro</a>
-    </nav>
-  </header>
-
-  <!-- 
-       ✅ Sección principal de registro.
-       → Clase `.registro` para consistencia visual (como .login, .contact__form)
-       → Centrado, con fondo blanco y sombra (igual que login.html)
-  -->
-  <main class="registro">
-    <h2>Crea tu cuenta en TastyTap</h2>
-    <form class="registro__form">
-      <!-- Nombre completo -->
-      <label for="nombre-completo" class="form-label">Nombre completo</label>
-      <input 
-        type="text" 
-        id="nombre-completo" 
-        name="nombre-completo" 
-        class="input" 
-        placeholder="Ej: Juan Pérez" 
-        required
-      >
-
-      <!-- Correo electrónico -->
-      <label for="email-registro" class="form-label">Correo electrónico</label>
-      <input 
-        type="email" 
-        id="email-registro" 
-        name="email" 
-        class="input" 
-        placeholder="tu@email.com" 
-        required
-      >
-
-      <!-- Teléfono (opcional) -->
-      <label for="telefono" class="form-label">Teléfono (opcional)</label>
-      <input 
-        type="tel" 
-        id="telefono" 
-        name="telefono" 
-        class="input" 
-        placeholder="+57 300 123 4567"
-      >
-
-      <!-- Contraseña -->
-      <label for="password-registro" class="form-label">Contraseña</label>
-      <input 
-        type="password" 
-        id="password-registro" 
-        name="password" 
-        class="input" 
-        placeholder="Mínimo 6 caracteres" 
-        required 
-        minlength="6"
-      >
-
-      <!-- Confirmar contraseña -->
-      <label for="password-confirm" class="form-label">Confirmar contraseña</label>
-      <input 
-        type="password" 
-        id="password-confirm" 
-        name="password-confirm" 
-        class="input" 
-        placeholder="Repite tu contraseña" 
-        required 
-        minlength="6"
-      >
-
-      <!-- Botón de registro -->
-      <button type="submit" class="btn">Crear cuenta</button>
-
-      <!-- Enlace a login -->
-      <p style="text-align: center; margin-top: 1rem;">
-        ¿Ya tienes cuenta? <a href="/view/user/login.html" class="link-login">Inicia sesión aquí</a>
-      </p>
-    </form>
-  </main>
-
-  <!-- 
-       ✅ Footer idéntico al de los demás (reutilizable).
-       → Sin cambios: ya está estilizado en estilo.css (.footer)
-  -->
-  <footer class="footer">
-    <div class="restaurantes">
-      <h3>Restaurantes Mejor Valorados</h3>
-      <a href="#">Camachos</a>
-      <a href="#">Domino's</a>
-      <a href="#">KFC</a>
-      <a href="#">Mc Donald's</a>
-      <a href="#">El corral</a>
-      <a href="#">Dunkin' Donuts</a>
-    </div>
-    <div class="unete">
-      <h3>Únete a Tasty Tap</h3>
-      <a href="#">Registra tu restaurante</a>
-      <a href="#">Registra tu local</a>
-      <a href="#">Haz crecer tu marca</a>
-      <a href="#">Promociona tu negocio</a>
-    </div>
-    <div class="redes">
-      <h3>Síguenos en Redes Sociales</h3>
-      <div class="social">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  <div class="main-container">
+    <header class="navbar">
+      <div class="navbar__logo">
+        <img src="../../img/TastyTap.png" alt="Logo TastyTap">
+        <span class="navbar__brand">TastyTap</span>
       </div>
-    </div>
-    <div class="contacto">
-      <h3>Contacto</h3>
-      <p>📍 Calle 123 #45-67, Bogotá, Colombia</p>
-      <p>📞 +57 320 555 1234</p>
-      <p>✉️ contacto@tastytap.com</p>
-    </div>
-    <div class="footer__bottom">
-      <p>© 2025 TastyTap — Todos los derechos reservados 🍴</p>
-    </div>
-  </footer>
+      <nav class="navbar__menu">
+        <a href="../index.html">Inicio</a>
+        <a href="/views/user/menu.html">Menú</a>
+        <a href="/views/user/tienda.html">Tienda</a>
+        <a href="/views/user/contacto.html">Contacto</a>
+        <a href="/views/user/login.html">Iniciar sesión</a>
+      </nav>
+    </header>
 
+    <main class="main">
+      <div class="container">
+        <div class="auth-form">
+          <h2>¡Bienvenido a TastyTap! 🍔</h2>
+          <p>Completa el formulario para crear tu cuenta.</p>
+
+          <form class="register__form">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="edad">Edad</label>
+              <input type="number" id="edad" name="edad" class="form-control" min="18" required>
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo electrónico (principal)</label>
+              <input type="email" id="correo" name="correo" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="correo_respaldo">Correo de respaldo</label>
+              <input type="email" id="correo_respaldo" name="correo_respaldo" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono móvil</label>
+              <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="+57 300 123 4567" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contraseña">Contraseña</label>
+              <input type="password" id="contraseña" name="contraseña" class="form-control" required minlength="6">
+            </div>
+
+            <button type="submit" class="btn btn-register">Registrarse</button>
+
+            <p class="text-center" style="margin-top: 1rem;">
+              ¿Ya tienes cuenta? <a href="/views/user/login.html" style="color: #F08B51; text-decoration: underline;">Inicia sesión</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__section">
+            <h3>Restaurantes Mejor Valorados</h3>
+            <a href="#">Camachos</a>
+            <a href="#">Domino's</a>
+            <a href="#">KFC</a>
+            <a href="#">Mc Donald's</a>
+            <a href="#">El corral</a>
+            <a href="#">Dunkin' Donuts</a>
+          </div>
+          <div class="footer__section">
+            <h3>Únete a Tasty Tap</h3>
+            <a href="#">Registra tu restaurante</a>
+            <a href="#">Registra tu local</a>
+            <a href="#">Haz crecer tu marca</a>
+            <a href="#">Promociona tu negocio</a>
+          </div>
+          <div class="footer__section">
+            <h3>Síguenos en Redes Sociales</h3>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+          <div class="footer__section">
+            <h3>Contacto</h3>
+            <p>📍 Calle 123 #45-67, Bogotá, Colombia</p>
+            <p>📞 +57 320 555 1234</p>
+            <p>✉️ contacto@tastytap.com</p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>© 2025 TastyTap — Todos los derechos reservados 🍴</p>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

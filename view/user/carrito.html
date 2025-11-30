@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - TastyTap</title>
+  <title>Carrito - TastyTap</title>
   <link rel="stylesheet" href="../../css/utils/Base.css">
   <link rel="stylesheet" href="../../css/utils/estilo.css">
   <link rel="stylesheet" href="../../css/utils/style.css">
   <link rel="stylesheet" href="../../css/components/navbar.css">
   <link rel="stylesheet" href="../../css/components/footer.css">
   <link rel="stylesheet" href="../../css/components/button.css">
+  <link rel="stylesheet" href="../../css/components/card.css">
   <link rel="stylesheet" href="../../css/components/input.css">
 </head>
 <body>
@@ -20,32 +21,51 @@
         <span class="navbar__brand">TastyTap</span>
       </div>
       <nav class="navbar__menu">
-        <a href="/index.html">Inicio</a>
-        <a href="/views/user/menu.html">Menú</a>
-        <a href="/views/user/tienda.html">Tienda</a>
-        <a href="/views/user/contacto.html" class="active">Contacto</a>
-        <a href="/views/user/login.html">Login</a>
+        <a href="../index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="login.html">Login</a>
       </nav>
     </header>
 
     <main class="main">
       <div class="container">
-        <h2 class="section-title">Contáctanos</h2>
-        <form class="contact__form">
-          <div class="form-group">
-            <label for="nombre" class="form-label">Tu nombre</label>
-            <input type="text" id="nombre" name="nombre" class="input" required>
+        <h2 class="section-title">Tu Carrito</h2>
+
+        <div class="cart-card">
+          <div class="cart-item">
+            <img src="../../img/chorizo.jpg" alt="Chorizo" class="cart-item-image">
+            <div class="cart-item-details">
+              <h4 class="cart-item-title">Chorizo Santandereano</h4>
+              <p class="cart-item-price">$8.000 COP</p>
+            </div>
+            <div class="cart-item-quantity">
+              <button class="btn-quantity">−</button>
+              <input type="number" value="2" class="quantity-input">
+              <button class="btn-quantity">+</button>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email" class="form-label">Tu correo</label>
-            <input type="email" id="email" name="email" class="input" required>
+
+          <div class="cart-item">
+            <img src="../../img/limonada.jpg" alt="Limonada" class="cart-item-image">
+            <div class="cart-item-details">
+              <h4 class="cart-item-title">Limonada de Panela</h4>
+              <p class="cart-item-price">$4.000 COP</p>
+            </div>
+            <div class="cart-item-quantity">
+              <button class="btn-quantity">−</button>
+              <input type="number" value="1" class="quantity-input">
+              <button class="btn-quantity">+</button>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="mensaje" class="form-label">Tu mensaje</label>
-            <textarea id="mensaje" name="mensaje" class="textarea" rows="4" placeholder="Escribe aquí..."></textarea>
+
+          <div class="cart-total">
+            <strong>Total: $20.000 COP</strong>
           </div>
-          <button type="submit" class="btn">Enviar mensaje</button>
-        </form>
+
+          <button class="btn btn-checkout">Pagar por Transferencia</button>
+        </div>
       </div>
     </main>
 

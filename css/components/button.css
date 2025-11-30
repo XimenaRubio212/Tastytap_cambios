@@ -1,54 +1,370 @@
-/* 
-   📁 RUTA: /css/components/button.css
-   ✅ RESPONSABILIDAD: Estilos reutilizables para botones (y enlaces que parezcan botones)
-   🎯 USO: Importado en style.css. Clase base: `.btn`
-*/
+/* button.css - Estilos de botones */
 
-/* Estilo base para todos los botones (botones <button> y enlaces <a> con .btn) */
 .btn {
-    display: inline-block;           /* Comportamiento tipo bloque en línea */
-    background: var(--color-principal); /* Fondo con color principal */
-    color: white;                    /* Texto blanco */
-    padding: 0.75rem 1.5rem;         /* Espaciado interno cómodo */
-    border: none;                    /* Sin borde visible */
-    border-radius: 6px;              /* Bordes suavemente redondeados */
-    font-weight: 500;                /* Texto semi-negrita */
-    font-size: 1rem;                 /* Tamaño base legible */
-    cursor: pointer;                 /* Cursor de mano al hacer hover */
-    transition: var(--transicion);   /* Transición suave (definida en base.css) */
-    text-decoration: none;           /* Para enlaces: elimina subrayado */
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* Efecto al pasar el mouse: oscurecer fondo + elevar + sombra */
-.btn:hover {
-    background: #d06f39;             /* Versión más oscura del color principal */
-    transform: translateY(-2px);     /* Eleva ligeramente */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+.btn-primary {
+  color: #fff;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
-/* Variante pequeña: para acciones secundarias o espacios reducidos */
-.btn--small {
-    padding: 0.5rem 1rem;            /* Menos padding */
-    font-size: 0.9rem;               /* Texto ligeramente más pequeño */
+.btn-primary:hover {
+  color: #fff;
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
 }
 
-/* 
-   ⚠️ NOTA: Las clases .btn-edit y .btn-delete están definidas en admin/style.css 
-   (no se usan en páginas de usuario). Se dejan aquí por compatibilidad futura.
-*/
-.btn-edit,
-.btn-delete {
-    color: white;
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
+.btn-secondary {
+  color: #fff;
+  background-color: var(--secondary);
+  border-color: var(--secondary);
 }
 
-.btn-edit:hover {
-    background-color: #2980b9;
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #1a252b;
+  border-color: #1a252b;
 }
-.btn-delete:hover {
-    background-color: #c0392b;
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline-secondary {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-link {
+  font-weight: 400;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.btn-disabled {
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* Botones de acción */
+.btn-add-to-cart {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-add-to-cart:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-checkout {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-checkout:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-remove-from-cart {
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-remove-from-cart:hover {
+  background-color: #c82333;
+}
+
+/* Botones de cantidad */
+.btn-quantity {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-quantity:hover {
+  background-color: #f8f9fa;
+}
+
+/* Botones de estado */
+.btn-pending {
+  background-color: var(--warning);
+  color: #212529;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.btn-completed {
+  background-color: var(--success);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.btn-canceled {
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+/* Botones de navegación */
+.btn-nav {
+  background-color: transparent;
+  color: var(--dark);
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-nav:hover {
+  background-color: #f8f9fa;
+}
+
+/* Botones de formulario */
+.btn-submit {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-reset {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-reset:hover {
+  background-color: #1a252b;
+}
+
+/* Botones de notificación */
+.btn-notification {
+  background-color: transparent;
+  color: var(--dark);
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-notification:hover {
+  background-color: #f8f9fa;
+}
+
+/* Botones de perfil */
+.btn-profile {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-profile:hover {
+  background-color: #1a252b;
+}
+
+/* Botones de menú */
+.btn-menu {
+  background-color: transparent;
+  color: var(--dark);
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-menu:hover {
+  background-color: #f8f9fa;
+}
+
+/* Botones de tienda */
+.btn-store {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-store:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Botones de carrito */
+.btn-cart {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-cart:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Botones de historial */
+.btn-history {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-history:hover {
+  background-color: #1a252b;
+}
+
+/* Botones de login */
+.btn-login {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Botones de registro */
+.btn-register {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-register:hover {
+  background-color: #1a252b;
 }

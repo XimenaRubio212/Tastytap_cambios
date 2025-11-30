@@ -1,59 +1,482 @@
-/* 
-   📁 RUTA: /css/components/card.css
-   ✅ RESPONSABILIDAD: Estilos reutilizables para tarjetas (componente .card)
-   🎯 USO: Clase base `.card`, y variantes específicas: `.card__recomendacion`, `.card__tienda`, `.menu__card`
-*/
+/* card.css - Estilos de tarjetas */
 
-/* Estilo base común a todas las tarjetas */
 .card {
-    background: var(--color-blanco); /* Fondo blanco */
-    border-radius: var(--radio);     /* Bordes redondeados (10px) */
-    box-shadow: var(--sombra);       /* Sombra suave */
-    overflow: hidden;                /* Contiene contenido interno (ej: img) */
-    transition: var(--transicion);   /* Transición suave para hover */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  transition: box-shadow 0.3s;
 }
 
-/* Efecto al hacer hover: eleva y aumenta sombra */
 .card:hover {
-    transform: translateY(-5px);        /* Elevación sutil */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más profunda */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo de imagen dentro de cualquier tarjeta: ocupa ancho total */
-.card img {
-    width: 100%;
-    height: auto;
-    display: block;
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
 }
 
-/* === VARIANTES POR SECCIÓN === */
-
-/* Recomendaciones del día: imagen más alta */
-.card__recomendacion img {
-    height: 250px;                   /* Altura fija para alineación visual */
-    object-fit: cover;               /* Recorta imagen manteniendo proporción */
-    border-radius: var(--radio) var(--radio) 0 0; /* Solo esquinas superiores redondeadas */
+.card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
-/* Tienda (restaurantes): imagen ligeramente más corta */
-.card__tienda img {
-    height: 190px;
-    object-fit: cover;
-    border-radius: var(--radio) var(--radio) 0 0;
+.card-text {
+  margin-bottom: 0;
 }
 
-/* Menú (platos): imagen con altura fija y bordes redondeados */
-.menu__card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    border-radius: var(--radio) var(--radio) 0 0; /* Solo parte superior redondeada */
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
 }
 
-/* Estilo de contenedor de recomendación individual (centrado, ancho limitado) */
-.card__recomendacion {
-    max-width: 400px;
-    margin: 0 auto;                  /* Centrar horizontalmente */
-    padding-bottom: 1rem;            /* Espacio inferior para texto */
+.card-img-bottom {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+  border-radius: 0.25rem;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.card-img-bottom {
+  width: 100%;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.card-deck .card {
+  margin-bottom: 15px;
+}
+
+@media (min-width: 576px) {
+  .card-deck {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .card-deck .card {
+    flex: 0 0 0%;
+    margin-right: 15px;
+    margin-bottom: 0;
+    margin-left: 15px;
+  }
+}
+
+/* Tarjetas de producto */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 1rem;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Tarjetas de pedido */
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.order-card .order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.order-card .order-date {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.order-card .order-status {
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+.order-card .order-status-pendiente {
+  background-color: var(--warning);
+}
+
+.order-card .order-status-completado {
+  background-color: var(--success);
+}
+
+.order-card .order-status-cancelado {
+  background-color: var(--danger);
+}
+
+.order-card .order-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-card .order-item-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-card .order-item-name {
+  flex: 1;
+}
+
+.order-card .order-item-qty {
+  text-align: center;
+  width: 50px;
+}
+
+.order-card .order-item-price {
+  text-align: right;
+  width: 100px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Tarjetas de perfil */
+.profile-card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.profile-card .profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-card .profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.profile-card .profile-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.profile-card .profile-email {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.profile-card .profile-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.profile-card .btn-edit {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profile-card .btn-edit:hover {
+  background-color: #1a252b;
+}
+
+.profile-card .btn-delete {
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profile-card .btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Tarjetas de carrito */
+.cart-card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.cart-card .cart-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-card .cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+}
+
+.cart-card .cart-item-details {
+  flex: 1;
+}
+
+.cart-card .cart-item-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.cart-card .cart-item-price {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.cart-card .cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.cart-card .quantity-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.cart-card .quantity-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+
+.cart-card .cart-total {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: right;
+  padding: 1rem;
+  border-top: 2px solid #ddd;
+  background-color: #f8f9fa;
+}
+
+.cart-card .checkout-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cart-card .checkout-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Tarjetas de menú */
+.menu-card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.menu-card .menu-category {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.menu-card .menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-card .menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-card .menu-item-name {
+  flex: 1;
+}
+
+.menu-card .menu-item-price {
+  text-align: right;
+  width: 100px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Tarjetas de tienda */
+.store-card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.store-card .store-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.store-card .store-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.store-card .store-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.store-card .store-rating {
+  color: #666;
+  margin-left: 0.5rem;
+}
+
+.store-card .store-address {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.store-card .store-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.store-card .btn-view-menu {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.store-card .btn-view-menu:hover {
+  background-color: var(--primary-dark);
+}
+
+.store-card .btn-contact {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.store-card .btn-contact:hover {
+  background-color: #1a252b;
 }

@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - TastyTap</title>
+  <title>Mi Perfil - TastyTap</title>
   <link rel="stylesheet" href="../../css/utils/Base.css">
   <link rel="stylesheet" href="../../css/utils/estilo.css">
   <link rel="stylesheet" href="../../css/utils/style.css">
   <link rel="stylesheet" href="../../css/components/navbar.css">
   <link rel="stylesheet" href="../../css/components/footer.css">
   <link rel="stylesheet" href="../../css/components/button.css">
+  <link rel="stylesheet" href="../../css/components/card.css">
   <link rel="stylesheet" href="../../css/components/input.css">
 </head>
 <body>
@@ -20,32 +21,41 @@
         <span class="navbar__brand">TastyTap</span>
       </div>
       <nav class="navbar__menu">
-        <a href="/index.html">Inicio</a>
-        <a href="/views/user/menu.html">Menú</a>
-        <a href="/views/user/tienda.html">Tienda</a>
-        <a href="/views/user/contacto.html" class="active">Contacto</a>
-        <a href="/views/user/login.html">Login</a>
+        <a href="../index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="login.html">Login</a>
       </nav>
     </header>
 
     <main class="main">
       <div class="container">
-        <h2 class="section-title">Contáctanos</h2>
-        <form class="contact__form">
-          <div class="form-group">
-            <label for="nombre" class="form-label">Tu nombre</label>
-            <input type="text" id="nombre" name="nombre" class="input" required>
+        <h2 class="section-title">Mi Perfil</h2>
+
+        <div class="profile-card">
+          <div class="profile-header">
+            <img src="../../img/avatar.jpg" alt="Avatar" class="profile-avatar">
+            <div>
+              <h3 class="profile-name">Darcy Rubio</h3>
+              <p class="profile-email">darcy@example.com</p>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email" class="form-label">Tu correo</label>
-            <input type="email" id="email" name="email" class="input" required>
-          </div>
-          <div class="form-group">
-            <label for="mensaje" class="form-label">Tu mensaje</label>
-            <textarea id="mensaje" name="mensaje" class="textarea" rows="4" placeholder="Escribe aquí..."></textarea>
-          </div>
-          <button type="submit" class="btn">Enviar mensaje</button>
-        </form>
+
+          <form class="profile-form">
+            <div class="form-group">
+              <label>Teléfono</label>
+              <input type="tel" value="+57 300 123 4567" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Notificaciones</label>
+              <label><input type="checkbox" checked> Promociones</label><br>
+              <label><input type="checkbox" checked> Cambios de ubicación</label><br>
+              <label><input type="checkbox" checked disabled> Cierre temporal</label>
+            </div>
+            <button type="submit" class="btn btn-submit">Guardar cambios</button>
+          </form>
+        </div>
       </div>
     </main>
 
